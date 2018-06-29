@@ -1,6 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#607d8b</color>
+    <color name="colorPrimaryDark">#37474f</color>
+    <color name="colorAccent">#039be5</color>
+
+
+    <color name="green_050">#d0f8ce</color> <!-- Use with black text -->
+    <color name="green_100">#a3e9a4</color> <!-- Use with black text -->
+    <color name="green_200">#72d572</color> <!-- Use with black text -->
+    <color name="green_300">#42bd41</color> <!-- Use with black text -->
+    <color name="green_400">#2baf2b</color> <!-- Use with black text -->
+    <color name="green_500">#259b24</color> <!-- Use with white text -->
+    <color name="green_600">#0a8f08</color> <!-- Use with white text -->
+    <color name="green_700">#0a7e07</color> <!-- Use with white text -->
+    <color name="green_800">#056f00</color> <!-- Use with white text -->
+    <color name="green_900">#0d5302</color> <!-- Use with white text -->
+    <color name="green_a100">#a2f78d</color> <!-- Use with black text -->
+    <color name="green_a200">#5af158</color> <!-- Use with black text -->
+    <color name="green_a400">#14e715</color> <!-- Use with black text -->
+    <color name="green_a700">#12c700</color> <!-- Use with black text -->
+
+    <color name="blue_grey_050">#eceff1</color> <!-- Use with black text -->
+    <color name="blue_grey_100">#cfd8dc</color> <!-- Use with black text -->
+    <color name="blue_grey_200">#b0bec5</color> <!-- Use with black text -->
+    <color name="blue_grey_300">#90a4ae</color> <!-- Use with black text -->
+    <color name="blue_grey_400">#78909c</color> <!-- Use with white text -->
+    <color name="blue_grey_500">#607d8b</color> <!-- Use with white text -->
+    <color name="blue_grey_600">#546e7a</color> <!-- Use with white text -->
+    <color name="blue_grey_700">#455a64</color> <!-- Use with white text -->
+    <color name="blue_grey_800">#37474f</color> <!-- Use with white text -->
+    <color name="blue_grey_900">#263238</color> <!-- Use with white text -->
+
+    <color name="light_blue_050">#e1f5fe</color> <!-- Use with black text -->
+    <color name="light_blue_100">#b3e5fc</color> <!-- Use with black text -->
+    <color name="light_blue_200">#81d4fa</color> <!-- Use with black text -->
+    <color name="light_blue_300">#4fc3f7</color> <!-- Use with black text -->
+    <color name="light_blue_400">#29b6f6</color> <!-- Use with black text -->
+    <color name="light_blue_500">#03a9f4</color> <!-- Use with white text -->
+    <color name="light_blue_600">#039be5</color> <!-- Use with white text -->
+    <color name="light_blue_700">#0288d1</color> <!-- Use with white text -->
+    <color name="light_blue_800">#0277bd</color> <!-- Use with white text -->
+    <color name="light_blue_900">#01579b</color> <!-- Use with white text -->
+    <color name="light_blue_a100">#80d8ff</color> <!-- Use with black text -->
+    <color name="light_blue_a200">#40c4ff</color> <!-- Use with black text -->
+    <color name="light_blue_a400">#00b0ff</color> <!-- Use with black text -->
+    <color name="light_blue_a700">#0091ea</color> <!-- Use with white text -->
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+
+    <color name="stroke">#dddddd</color>
+    <color name="text_light">#66000000</color>
+    <color name="card_text">#ff8d8d8d</color>
+    <color name="card_title_text">#ff707070</color>
+    <color name="card_light_text">#ffcccccc</color>
+    <color name="card_grid_text">#ff707070</color>
+    <color name="card_grid_tex">#ff8f8f8f</color>
+    <color name="card_separator">#ffe5e5e5</color>
+    <color name="card_separator_sec">#f5f5f5</color>
+    <color name="card_separator_third">#fafafa</color>
+    <color name="card">#ffefefef</color>
+    <color name="card_border">#ffdedede</color>
+    <color name="second_grey">#ff999999</color>
+    <color name="card_white">#ffffff</color>
+    <color name="card_shadow">#8c666666</color>
+
 </resources>

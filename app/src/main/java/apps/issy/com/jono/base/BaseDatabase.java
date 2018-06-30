@@ -5,7 +5,8 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import apps.issy.com.jono.model.data.JournalModel;
+import apps.issy.com.jono.model.dao.JournalModelDao;
+import apps.issy.com.jono.model.entities.JournalModel;
 
 /**
  * Created by issy on 28/06/2018.
@@ -25,5 +26,7 @@ public abstract class BaseDatabase extends RoomDatabase{
         }
         return INSTANCE;
     }
+
+    public abstract JournalModelDao journalModelDao();
 
 }

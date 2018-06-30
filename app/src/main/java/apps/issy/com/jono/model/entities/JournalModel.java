@@ -1,6 +1,6 @@
 
 
-package apps.issy.com.jono.model.data;
+package apps.issy.com.jono.model.entities;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;

@@ -4,6 +4,20 @@
     <color name="colorPrimaryDark">#37474f</color>
     <color name="colorAccent">#039be5</color>
 
+    <color name="red_050">#fde0dc</color> <!-- Use with black text -->
+    <color name="red_100">#f9bdbb</color> <!-- Use with black text -->
+    <color name="red_200">#f69988</color> <!-- Use with black text -->
+    <color name="red_300">#f36fc6</color> <!-- Use with black text -->
+    <color name="red_400">#e84e40</color> <!-- Use with black text -->
+    <color name="red_500">#e51c23</color> <!-- Use with white text -->
+    <color name="red_600">#dd191d</color> <!-- Use with white text -->
+    <color name="red_700">#d01716</color> <!-- Use with white text -->
+    <color name="red_800">#c41411</color> <!-- Use with white text -->
+    <color name="red_900">#b0120a</color> <!-- Use with white text -->
+    <color name="red_a100">#ff7997</color> <!-- Use with black text -->
+    <color name="red_a200">#ff5177</color> <!-- Use with white text -->
+    <color name="red_a400">#ff2d6f</color> <!-- Use with white text -->
+    <color name="red_a700">#e00032</color> <!-- Use with white text -->
 
     <color name="green_050">#d0f8ce</color> <!-- Use with black text -->
     <color name="green_100">#a3e9a4</color> <!-- Use with black text -->

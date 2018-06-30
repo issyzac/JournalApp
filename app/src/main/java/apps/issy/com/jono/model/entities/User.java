@@ -1,4 +1,4 @@
-package apps.issy.com.jono.model.data;
+package apps.issy.com.jono.model.entities;
 import android.databinding.ObservableField;
 
 /**

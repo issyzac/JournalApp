@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_bordered"
+        android:layout_margin="8dp"
+        android:padding="8dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimary"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:id="@+id/tv_journal_title"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:fontFamily="@font/opensans_bold"
+            android:text="This is the title of the your journal"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_journal_content_summary"
+            android:maxLines="3"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:gravity="left"
+            android:fontFamily="@font/opensans_regular"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_journal_title"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="16dp"
+            app:layout_constrainedWidth="true"
+            android:textColor="@color/card_title_text"
+            android:text="@string/lorem"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:id="@+id/tv_journal_date"
+            android:textColor="@color/card_light_text"
+            android:text="27/06/2018"
+            android:fontFamily="@font/opensans_bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_journal_content_summary"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_journal_content_summary"/>
+
+    </android.support.constraint.ConstraintLayout>
+
+</LinearLayout>

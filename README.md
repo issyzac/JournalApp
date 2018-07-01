@@ -8,10 +8,14 @@ Clone the project in your local machine and import it using Android studio and r
 
 ### Prerequisites
 
+```
 To be able to run the source codes locally you will need to have Android studio atleast 2.3
+
+```
 
 ### Installing
 
+```
 1. Install android studio 
 
 2. Clone the project to your local machine
@@ -24,24 +28,6 @@ To be able to run the source codes locally you will need to have Android studio 
 
 5. Select the file build.gradle at the root of the cloned folder
 
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
 ```
 
 ## Built With
@@ -60,7 +46,7 @@ We use [SemVer](http://semver.org/) for versioning. For the versions available, 
 
 ## Authors
 
-* **Isaiah Zachariah ** - *Initial work* - [Issyzac](https://github.com/issyzac)
+***Isaiah Zachariah ** - *Initial work* - [Issyzac](https://github.com/issyzac)
 
 ## License
 

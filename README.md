@@ -38,11 +38,11 @@ To be able to run the source codes locally you will need to have Android studio 
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+Ony a Single contributor at the moment.
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+I used [Gradle](https://gradle.org/) for versioning.
 
 ## Authors
 

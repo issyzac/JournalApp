@@ -60,29 +60,30 @@ public class ScheduledDataSyncJobService extends JobService {
 
     public void syncDataToFirebase(final JobParameters parameters) {
         try {
+            if (FirebaseAuth.getInstance().getCurrentUser() != null){
+                final String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
+                final DatabaseReference mUserReference = FirebaseDatabase.getInstance().getReference()
+                        .child("users-journals")
+                        .child(currentUserId);
 
-            final String currentUserId = FirebaseAuth.getInstance().getCurrentUser().getUid();
-            final DatabaseReference mUserReference = FirebaseDatabase.getInstance().getReference()
-                    .child("users-journals")
-                    .child(currentUserId);
+                BaseDatabase database = BaseDatabase.getINSTANCE(this);
+                List<JournalModel> journals = database.journalModelDao().getAllJournalList();
+                for (JournalModel j : journals){
 
-            BaseDatabase database = BaseDatabase.getINSTANCE(this);
-            List<JournalModel> journals = database.journalModelDao().getAllJournalList();
-            for (JournalModel j : journals){
+                    Log.d(TAG, "User is : "+currentUserId);
+                    Log.d(TAG, "Journal Title is : "+j.getTitle());
+                    Log.d(TAG, "Journal ID is : "+j.getJournalId());
 
-                Log.d(TAG, "User is : "+currentUserId);
-                Log.d(TAG, "Journal Title is : "+j.getTitle());
-                Log.d(TAG, "Journal ID is : "+j.getJournalId());
+                    DatabaseReference journalRef = mUserReference.child(""+j.getJournalId());
+                    journalRef.setValue(j);
+                }
 
-                DatabaseReference journalRef = mUserReference.child(""+j.getJournalId());
-                journalRef.setValue(j);
+                Log.d(TAG, "completeJob: " + "jobStarted");
+                //This task takes 2 seconds to complete.
+                Thread.sleep(2000);
+
+                Log.d(TAG, "completeJob: " + "jobFinished");
             }
-
-            Log.d(TAG, "completeJob: " + "jobStarted");
-            //This task takes 2 seconds to complete.
-            Thread.sleep(2000);
-
-            Log.d(TAG, "completeJob: " + "jobFinished");
         } catch (InterruptedException e) {
             e.printStackTrace();
         } finally {

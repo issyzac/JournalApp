@@ -1,7 +1,6 @@
 package apps.issy.com.jono;
 
 import android.content.Intent;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.View;
@@ -30,7 +29,7 @@ public class LoginSignUpActivity extends BaseActivity implements BaseView.LoginV
     private EditText mSignUpEmailEditText, mSignUpPasswordEditText, mSignUpPasswordRepeatEditText, mSignUpUsernameEditText;
     private Button mLoginButton, mSignUpButton;
     private LinearLayout mLoginContainer, mSignupContainer;
-    private RelativeLayout mProgressContainer;
+    private RelativeLayout mProgressContainer, mSignUpProgressContainer;
     private TextView mMessagesTextView;
 
     private Presenter.LoginPresenter mPresenter;
@@ -59,6 +58,7 @@ public class LoginSignUpActivity extends BaseActivity implements BaseView.LoginV
         mProgressContainer = findViewById(R.id.progress_container);
         mLoginContainer = findViewById(R.id.login_container);
         mSignupContainer = findViewById(R.id.sign_up_container);
+        mSignUpProgressContainer = findViewById(R.id.sign_up_progress_container);
 
         mMessagesTextView = findViewById(R.id.tv_messages);
     }
@@ -75,6 +75,10 @@ public class LoginSignUpActivity extends BaseActivity implements BaseView.LoginV
 
     public void loginUser(View view){
         mPresenter.validateCredentials(mLoginEmailEditText.getText().toString(), mLoginPasswordEditText.getText().toString());
+    }
+
+    public void signUpUser(View view){
+        mPresenter.validateSignUpCredentials(mSignUpEmailEditText.getText().toString(), mSignUpPasswordEditText.getText().toString(), mSignUpPasswordRepeatEditText.getText().toString());
     }
 
     @Override
@@ -98,6 +102,18 @@ public class LoginSignUpActivity extends BaseActivity implements BaseView.LoginV
     public void hideProgress() {
         mLoginButton.setVisibility(View.VISIBLE);
         mProgressContainer.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void showSignUpProgress() {
+        mSignUpProgressContainer.setVisibility(View.VISIBLE);
+        mSignUpButton.setVisibility(View.GONE);
+    }
+
+    @Override
+    public void hideSignUpProgress() {
+        mSignUpProgressContainer.setVisibility(View.GONE);
+        mSignUpButton.setVisibility(View.VISIBLE);
     }
 
     @Override

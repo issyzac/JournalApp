@@ -28,9 +28,9 @@ public class LoginPresenterImpl implements Presenter.LoginPresenter, LoginIntera
     @Override
     public void validateSignUpCredentials(String email, String password, String repeatedPassword) {
         if (loginView != null){
-            loginView.showProgress();
+            loginView.showSignUpProgress();
         }
-        //loginInteractor.signUp(email, password);
+        loginInteractor.signUp(email, password, this);
     }
 
     @Override
@@ -99,7 +99,7 @@ public class LoginPresenterImpl implements Presenter.LoginPresenter, LoginIntera
                     loginView.clearMessage();
                 }
             }, 2000);
-            loginView.hideProgress();
+            loginView.hideSignUpProgress();
         }
     }
 

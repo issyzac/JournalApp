@@ -224,6 +224,7 @@
                 android:background="@drawable/round_button_fill"
                 android:text="Sign Up"
                 android:id="@+id/button_signup"
+                android:onClick="signUpUser"
                 android:textAllCaps="false"
                 android:textColor="@color/white"/>
 

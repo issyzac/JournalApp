@@ -33,6 +33,10 @@ public interface BaseView {
 
         void hideProgress();
 
+        void showSignUpProgress();
+
+        void hideSignUpProgress();
+
         void showCredentialsError();
 
         void showLoginFailure();

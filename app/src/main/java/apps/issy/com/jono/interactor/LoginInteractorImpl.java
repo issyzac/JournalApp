@@ -26,7 +26,7 @@ public class LoginInteractorImpl implements Interactor.LoginInteractor {
             listener.onValidationError();
         }else {
             mAuth.signInWithEmailAndPassword(email, password)
-                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
@@ -42,14 +42,25 @@ public class LoginInteractorImpl implements Interactor.LoginInteractor {
     }
 
     @Override
-    public void signUp(String email, String password, onLoginFinished listener) {
-        /*
-         * TODO Firebase signUp code goes here
-         *
-         * If validationError -> Call listener.onValidationError();
-         * If signUpError -> Call listener.onSignUpFailed();
-         * If loginSuccess -> Call listener.onSignUpSuccess();
-         */
+    public void signUp(String email, String password, final onLoginFinished listener) {
+
+        if (TextUtils.isEmpty(email) || TextUtils.isEmpty(password)){
+            listener.onValidationError();
+        }else {
+            mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            // Sign in success, update UI with the signed-in user's information
+                            listener.onSignUpSuccess();
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            listener.onSignUpFailed();
+                        }
+                    }
+                });
+        }
 
     }
 }

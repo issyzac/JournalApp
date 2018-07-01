@@ -15,7 +15,7 @@ import com.google.firebase.auth.FirebaseAuth;
  * On Project JournalApp
  */
 
-public class LoginInteractorImpl implements LoginInteractor {
+public class LoginInteractorImpl implements Interactor.LoginInteractor {
 
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
@@ -42,7 +42,7 @@ public class LoginInteractorImpl implements LoginInteractor {
     }
 
     @Override
-    public void signUp(String email, String password, String username, onLoginFinished listener) {
+    public void signUp(String email, String password, onLoginFinished listener) {
         /*
          * TODO Firebase signUp code goes here
          *

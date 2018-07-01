@@ -3,8 +3,8 @@ package apps.issy.com.jono.presenter;
 import android.os.Handler;
 
 import apps.issy.com.jono.base.BaseDatabase;
-import apps.issy.com.jono.interactor.AddJournalInteractor;
-import apps.issy.com.jono.view.AddJournalView;
+import apps.issy.com.jono.interactor.Interactor;
+import apps.issy.com.jono.view.BaseView;
 
 /**
  * Created by issy on 30/06/2018.
@@ -13,13 +13,13 @@ import apps.issy.com.jono.view.AddJournalView;
  * On Project JournalApp
  */
 
-public class AddJournalPresenterImpl implements AddJournalPresenter, AddJournalInteractor.onJournalAdded{
+public class AddJournalPresenterImpl implements Presenter.AddJournalPresenter, Interactor.AddJournalInteractor.onJournalAdded{
 
-    private AddJournalView mAddJournalView;
-    private AddJournalInteractor mAddJournalInteractor;
+    private BaseView.AddJournalView mAddJournalView;
+    private Interactor.AddJournalInteractor mAddJournalInteractor;
     private BaseDatabase mDatabase;
 
-    public AddJournalPresenterImpl(AddJournalView addJournalView, AddJournalInteractor addJournalInteractor, BaseDatabase database){
+    public AddJournalPresenterImpl(BaseView.AddJournalView addJournalView, Interactor.AddJournalInteractor addJournalInteractor, BaseDatabase database){
         this.mAddJournalView = addJournalView;
         this.mAddJournalInteractor = addJournalInteractor;
         this.mDatabase = database;

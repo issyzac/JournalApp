@@ -52,6 +52,7 @@
             android:fontFamily="@font/opensans_extrabolditalic"
             android:gravity="center_horizontal"
             android:text="Jono"
+            android:id="@+id/login_app_name"
             android:textColor="@color/colorPrimary"
             android:textSize="40sp" />
 
@@ -97,6 +98,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
+                android:id="@+id/switch_to_sign_up_text"
                 android:fontFamily="@font/opensans_semibold"
                 android:onClick="switchToSignUp"
                 android:text="Sign Up" />
@@ -137,7 +139,7 @@
     </LinearLayout>
 
     <LinearLayout
-        android:visibility="gone"
+        android:visibility="invisible"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:id="@+id/sign_up_container"
@@ -152,7 +154,7 @@
             android:layout_height="wrap_content"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal"
-            android:text="Jono"
+            android:text="Joono"
             android:fontFamily="@font/opensans_extrabolditalic"
             android:textSize="40sp"
             android:textColor="@color/colorPrimary"/>
@@ -177,17 +179,6 @@
             android:hint="Email"
             android:paddingLeft="8dp"
             android:fontFamily="@font/opensans_regular"
-            android:background="@drawable/et_background"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:id="@+id/et_sign_up_username"
-            android:inputType="text"
-            android:layout_marginTop="16dp"
-            android:hint="username"
-            android:fontFamily="@font/opensans_regular"
-            android:paddingLeft="8dp"
             android:background="@drawable/et_background"/>
 
         <EditText
@@ -236,6 +227,24 @@
                 android:textAllCaps="false"
                 android:textColor="@color/white"/>
 
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:visibility="visible"
+                android:background="@drawable/round_button_fill"
+                android:layout_alignParentEnd="true"
+                android:id="@+id/sign_up_progress_container">
+
+                <com.github.rahatarmanahmed.cpv.CircularProgressView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_centerInParent="true"
+                    app:cpv_animAutostart="true"
+                    app:cpv_indeterminate="true"
+                    app:cpv_color="@color/white" />
+
+            </RelativeLayout>
+
         </RelativeLayout>
 
     </LinearLayout>
@@ -245,11 +254,12 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/opensans_semibold"
         android:id="@+id/tv_messages"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         android:layout_marginBottom="40dp"
         android:textColor="@android:color/holo_red_dark"
-        android:text=""/>
+        android:text="@string/login_success"/>
 
 </android.support.constraint.ConstraintLayout>

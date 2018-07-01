@@ -17,7 +17,7 @@ import apps.issy.com.jono.model.entities.JournalModel;
  * On Project JournalApp
  */
 
-public class AddJournalInteractorImpl implements AddJournalInteractor {
+public class AddJournalInteractorImpl implements Interactor.AddJournalInteractor {
 
     @SuppressLint("StaticFieldLeak")
     @Override

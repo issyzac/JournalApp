@@ -23,7 +23,7 @@ import apps.issy.com.jono.model.entities.JournalModel;
  * On Project JournalApp
  */
 
-public class LoadJournalsInteractorImpl implements LoadJournalsInteractor{
+public class LoadJournalsInteractorImpl implements Interactor.LoadJournalsInteractor {
 
     LiveData<List<JournalModel>> items;
 

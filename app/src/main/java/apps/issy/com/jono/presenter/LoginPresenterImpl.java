@@ -4,9 +4,9 @@ import android.text.TextUtils;
 
 import android.os.Handler;
 
-import apps.issy.com.jono.interactor.LoginInteractor;
+import apps.issy.com.jono.interactor.Interactor;
 import apps.issy.com.jono.interactor.LoginInteractorImpl;
-import apps.issy.com.jono.view.LoginView;
+import apps.issy.com.jono.view.BaseView;
 
 /**
  * Created by issy on 29/06/2018.
@@ -15,19 +15,22 @@ import apps.issy.com.jono.view.LoginView;
  * On Project JournalApp
  */
 
-public class LoginPresenterImpl implements LoginPresenter, LoginInteractorImpl.onLoginFinished {
+public class LoginPresenterImpl implements Presenter.LoginPresenter, LoginInteractorImpl.onLoginFinished {
 
-    private LoginView loginView;
-    private LoginInteractor loginInteractor;
+    private BaseView.LoginView loginView;
+    private Interactor.LoginInteractor loginInteractor;
 
-    public LoginPresenterImpl(LoginView view, LoginInteractor interactor){
+    public LoginPresenterImpl(BaseView.LoginView view, Interactor.LoginInteractor interactor){
         this.loginView = view;
         this.loginInteractor = interactor;
     }
 
     @Override
     public void validateSignUpCredentials(String email, String password, String repeatedPassword) {
-
+        if (loginView != null){
+            loginView.showProgress();
+        }
+        //loginInteractor.signUp(email, password);
     }
 
     @Override

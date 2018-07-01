@@ -1,13 +1,10 @@
 package apps.issy.com.jono;
 
-import android.arch.lifecycle.Observer;
-import android.arch.persistence.room.InvalidationTracker;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
@@ -16,7 +13,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.RelativeLayout;
 
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.github.rahatarmanahmed.cpv.CircularProgressView;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -28,12 +24,12 @@ import apps.issy.com.jono.base.BaseDatabase;
 import apps.issy.com.jono.fragment.AddJournalFragment;
 import apps.issy.com.jono.interactor.LoadJournalsInteractorImpl;
 import apps.issy.com.jono.model.entities.JournalModel;
-import apps.issy.com.jono.presenter.MainPresenter;
+import apps.issy.com.jono.presenter.Presenter;
 import apps.issy.com.jono.presenter.MainPresenterImpl;
 import apps.issy.com.jono.utils.RecyclerItemClickListener;
-import apps.issy.com.jono.view.MainView;
+import apps.issy.com.jono.view.BaseView;
 
-public class MainActivity extends BaseActivity implements MainView, View.OnClickListener {
+public class MainActivity extends BaseActivity implements BaseView.MainView, View.OnClickListener {
 
     private ConstraintLayout mContainer;
     private RecyclerView mRecyclerView;
@@ -42,7 +38,7 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     private Toolbar toolbar;
 
     private FirebaseAuth mAuth;
-    private MainPresenter presenter;
+    private Presenter.MainPresenter presenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +60,8 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
         mRecyclerView.addOnItemTouchListener(new RecyclerItemClickListener(this, mRecyclerView, new RecyclerItemClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                presenter.onItemClicked(position);
+                JournalRecyclerAdapter adapter = (JournalRecyclerAdapter) mRecyclerView.getAdapter();
+                presenter.onItemClicked(adapter.getJournalAtPosition(position));
             }
 
             @Override
@@ -153,6 +150,13 @@ public class MainActivity extends BaseActivity implements MainView, View.OnClick
     public void showMessage(String message) {
         Snackbar.make(mContainer, message, Snackbar.LENGTH_LONG)
                 .setAction("Dismiss", null).show();
+    }
+
+    @Override
+    public void viewDetails(long journalId) {
+        Intent intent = new Intent(this, JournalDetailActivity.class);
+        intent.putExtra(JournalDetailActivity.JOURNAL_ID, journalId);
+        startActivity(intent);
     }
 
     @Override

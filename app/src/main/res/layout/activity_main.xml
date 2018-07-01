@@ -24,14 +24,23 @@
                 android:layout_height="match_parent"
                 android:layout_marginRight="16dp">
 
+                <ImageView
+                    android:layout_width="35dp"
+                    android:layout_height="35dp"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/logo"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_logo"/>
+
                 <TextView
+                    android:layout_toRightOf="@id/logo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@color/white"
                     android:layout_centerVertical="true"
                     android:fontFamily="@font/opensans_extrabold"
-                    android:textSize="16sp"
-                    android:text="JONO"/>
+                    android:textSize="12sp"
+                    android:text="NO"/>
 
             </RelativeLayout>
             

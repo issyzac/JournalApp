@@ -13,9 +13,9 @@ import android.widget.TextView;
 
 import apps.issy.com.jono.base.BaseActivity;
 import apps.issy.com.jono.interactor.LoginInteractorImpl;
-import apps.issy.com.jono.presenter.LoginPresenter;
 import apps.issy.com.jono.presenter.LoginPresenterImpl;
-import apps.issy.com.jono.view.LoginView;
+import apps.issy.com.jono.presenter.Presenter;
+import apps.issy.com.jono.view.BaseView;
 
 /**
  * Created by issy on 29/06/2018.
@@ -24,7 +24,7 @@ import apps.issy.com.jono.view.LoginView;
  * On Project JournalApp
  */
 
-public class LoginSignUpActivity extends BaseActivity implements LoginView {
+public class LoginSignUpActivity extends BaseActivity implements BaseView.LoginView {
 
     private EditText mLoginEmailEditText, mLoginPasswordEditText;
     private EditText mSignUpEmailEditText, mSignUpPasswordEditText, mSignUpPasswordRepeatEditText, mSignUpUsernameEditText;
@@ -33,7 +33,7 @@ public class LoginSignUpActivity extends BaseActivity implements LoginView {
     private RelativeLayout mProgressContainer;
     private TextView mMessagesTextView;
 
-    private LoginPresenter mPresenter;
+    private Presenter.LoginPresenter mPresenter;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,7 +52,6 @@ public class LoginSignUpActivity extends BaseActivity implements LoginView {
         mSignUpEmailEditText = findViewById(R.id.et_sign_up_email);
         mSignUpPasswordEditText = findViewById(R.id.et_sign_up_password);
         mSignUpPasswordRepeatEditText = findViewById(R.id.et_sign_up_password_repeat);
-        mSignUpUsernameEditText = findViewById(R.id.et_sign_up_username);
 
         mLoginButton = findViewById(R.id.button_login);
         mSignUpButton = findViewById(R.id.button_signup);
@@ -109,13 +108,13 @@ public class LoginSignUpActivity extends BaseActivity implements LoginView {
 
     @Override
     public void showLoginFailure() {
-        mMessagesTextView.setText("Incorrect email or password");
+        mMessagesTextView.setText(getResources().getString(R.string.incorrect_email_or_password));
         mMessagesTextView.setTextColor(getResources().getColor(R.color.red_700));
     }
 
     @Override
     public void showLoginSuccess() {
-        mMessagesTextView.setText("Successfully logged in");
+        mMessagesTextView.setText(getResources().getString(R.string.login_success));
         mMessagesTextView.setTextColor(getResources().getColor(R.color.green_800));
     }
 

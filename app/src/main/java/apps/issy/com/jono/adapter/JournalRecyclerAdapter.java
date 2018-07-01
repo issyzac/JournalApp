@@ -45,6 +45,15 @@ public class JournalRecyclerAdapter extends RecyclerView.Adapter<JournalRecycler
         return mItems.size();
     }
 
+    public JournalModel getJournalAtPosition(int position){
+        if (mItems.size() > 0){
+            return mItems.get(position);
+        }
+        else {
+            return null;
+        }
+    }
+
     class ViewHolder extends RecyclerView.ViewHolder{
         TextView mTitle;
         TextView mContent;

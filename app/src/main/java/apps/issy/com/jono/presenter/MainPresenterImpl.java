@@ -3,9 +3,9 @@ package apps.issy.com.jono.presenter;
 import java.util.List;
 
 import apps.issy.com.jono.base.BaseDatabase;
-import apps.issy.com.jono.interactor.LoadJournalsInteractor;
+import apps.issy.com.jono.interactor.Interactor;
 import apps.issy.com.jono.model.entities.JournalModel;
-import apps.issy.com.jono.view.MainView;
+import apps.issy.com.jono.view.BaseView;
 
 /**
  * Created by issy on 30/06/2018.
@@ -14,13 +14,13 @@ import apps.issy.com.jono.view.MainView;
  * On Project JournalApp
  */
 
-public class MainPresenterImpl implements MainPresenter, LoadJournalsInteractor.onFinishListener {
+public class MainPresenterImpl implements Presenter.MainPresenter, Interactor.LoadJournalsInteractor.onFinishListener {
 
-    private MainView mMainView;
-    private LoadJournalsInteractor mLoadJournalsInteractor;
+    private BaseView.MainView mMainView;
+    private Interactor.LoadJournalsInteractor mLoadJournalsInteractor;
     private BaseDatabase mDatabase;
 
-    public MainPresenterImpl(MainView mainView, LoadJournalsInteractor loadJournalsInteractor,
+    public MainPresenterImpl(BaseView.MainView mainView, Interactor.LoadJournalsInteractor loadJournalsInteractor,
                              BaseDatabase database){
         this.mMainView = mainView;
         this.mLoadJournalsInteractor = loadJournalsInteractor;
@@ -36,10 +36,11 @@ public class MainPresenterImpl implements MainPresenter, LoadJournalsInteractor.
     }
 
     @Override
-    public void onItemClicked(int position) {
+    public void onItemClicked(JournalModel journalModel) {
         if (mMainView != null){
             //Handle item Clicked of the recyclerView having the position
-            mMainView.showMessage("Position Clicked : "+position);
+            mMainView.showMessage(journalModel.getTitle());
+            mMainView.viewDetails(journalModel.getJournalId());
         }
     }
 

@@ -16,9 +16,9 @@ import apps.issy.com.jono.R;
 import apps.issy.com.jono.base.BaseDatabase;
 import apps.issy.com.jono.base.BaseFragment;
 import apps.issy.com.jono.interactor.AddJournalInteractorImpl;
-import apps.issy.com.jono.presenter.AddJournalPresenter;
 import apps.issy.com.jono.presenter.AddJournalPresenterImpl;
-import apps.issy.com.jono.view.AddJournalView;
+import apps.issy.com.jono.presenter.Presenter;
+import apps.issy.com.jono.view.BaseView;
 
 /**
  * Created by issy on 30/06/2018.
@@ -27,14 +27,14 @@ import apps.issy.com.jono.view.AddJournalView;
  * On Project JournalApp
  */
 
-public class AddJournalFragment extends BaseFragment implements AddJournalView, View.OnClickListener {
+public class AddJournalFragment extends BaseFragment implements BaseView.AddJournalView, View.OnClickListener {
 
     private EditText mJournalTitleEditText;
     private EditText mJournalContentsEditText;
     private CircularProgressView progressView;
     private TextView mOkTextView, mCancelTextView, mMessagesTextView;
 
-    private AddJournalPresenter presenter;
+    private Presenter.AddJournalPresenter presenter;
 
     public AddJournalFragment(){}
 
@@ -83,14 +83,14 @@ public class AddJournalFragment extends BaseFragment implements AddJournalView, 
 
     @Override
     public void showProgress() {
-        mOkTextView.setVisibility(View.GONE);
+        mOkTextView.setVisibility(View.INVISIBLE);
         progressView.setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideProgress() {
         mOkTextView.setVisibility(View.VISIBLE);
-        progressView.setVisibility(View.GONE);
+        progressView.setVisibility(View.INVISIBLE);
     }
 
     @Override

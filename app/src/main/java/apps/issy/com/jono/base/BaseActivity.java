@@ -16,7 +16,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class BaseActivity extends AppCompatActivity {
 
-    public DatabaseReference firebaseDatabaseReference = FirebaseDatabase.getInstance().getReference();
+    public static DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("users-journals");
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

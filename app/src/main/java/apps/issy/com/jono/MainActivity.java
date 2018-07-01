@@ -70,6 +70,8 @@ public class MainActivity extends BaseActivity implements BaseView.MainView, Vie
             }
         }));
 
+        presenter.scheduleJob(this);
+
     }
 
     private void setUpViews(){

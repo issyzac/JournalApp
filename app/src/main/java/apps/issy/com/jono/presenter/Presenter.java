@@ -1,5 +1,7 @@
 package apps.issy.com.jono.presenter;
 
+import android.content.Context;
+
 import apps.issy.com.jono.model.entities.JournalModel;
 
 /**
@@ -16,6 +18,8 @@ public interface Presenter {
         void onResume();
 
         void onItemClicked(JournalModel journalModel);
+
+        void scheduleJob(Context context);
 
         void onDestroy();
 

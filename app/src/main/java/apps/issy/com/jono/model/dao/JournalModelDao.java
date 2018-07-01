@@ -26,6 +26,9 @@ public interface JournalModelDao {
     @Query("select * from JournalModel order by updatedAt desc")
     LiveData<List<JournalModel>> getAllJounals();
 
+    @Query("select * from JournalModel order by updatedAt desc")
+    List<JournalModel> getAllJournalList();
+
     @Query("select * from JournalModel where journalId = :journalId")
     LiveData<JournalModel> getJournalById(long journalId);
 
